@@ -1,0 +1,149 @@
+.slider {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+
+  &-item {
+    display: none;
+    opacity: 0;
+    padding: .3rem .6rem;
+    position: absolute;
+    visibility: hidden;
+
+    &--current {
+      display: block;
+      left: 50%;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+      z-index: 200;
+    }
+
+    &--moving-to-current {
+      animation: .6s slide-to-current;
+      display: block;
+      left: 50%;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      visibility: visible;
+      z-index: 200;
+    }
+
+    &--next {
+      display: block;
+      opacity: .7;
+      position: absolute;
+      transform: translate(10%, 20%);
+      visibility: visible;
+      z-index: 100;
+    }
+
+    &--moving-to-default {
+      animation: .6s slide-to-default;
+      display: none;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      visibility: hidden;
+      z-index: 200;
+    }
+  }
+}
+
+@keyframes slide-to-current {
+  0% {
+    display: block;
+    left: 60%;
+    opacity: 1;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    z-index: 200;
+  }
+
+  100% {
+    display: block;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    z-index: 200;
+  }
+}
+
+@keyframes slide-to-default {
+  0% {
+    display: block;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    z-index: 200;
+  }
+
+  100% {
+    display: block;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-60%, -70%);
+    visibility: visible;
+    z-index: 200;
+  }
+}
+
+// @keyframes slide-current {
+//   0% {
+//     display: block;
+//     opacity: .7;
+//     position: absolute;
+//     transform: translate(10%, 20%);
+//     visibility: visible;
+//     z-index: 100;
+//   }
+
+//   100% {
+//     display: block;
+//     left: 50%;
+//     opacity: 1;
+//     position: absolute;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     visibility: visible;
+//     z-index: 200;
+//   }
+// }
+
+// @keyframes slide-next {
+//   0% {
+//     display: block;
+//     opacity: 0;
+//     position: absolute;
+//     transform: translate(120%, 140%);
+//     visibility: visible;
+//     z-index: 100;
+//   }
+
+//   100% {
+//     display: block;
+//     opacity: .7;
+//     position: absolute;
+//     transform: translate(10%, 20%);
+//     visibility: visible;
+//     z-index: 100;
+//   }
+// }
